@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CF601E2-C2C9-45C3-8438-27F1202D116E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperDeniz</RootNamespace>
+    <AssemblyName>SuperDeniz</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contact.aspx" />
+    <Content Include="Icons\img_avatar1.png" />
+    <Content Include="Icons\impect_resist.png" />
+    <Content Include="Icons\resist_electricity.png" />
+    <Content Include="Icons\resist_hight_warm.png" />
+    <Content Include="Icons\resist_water.png" />
+    <Content Include="Images\SD-18-2.png" />
+    <Content Include="Images\SD-18-3.png" />
+    <Content Include="Images\SD-31-1.png" />
+    <Content Include="Images\SD-34-1.png" />
+    <Content Include="Images\SD-34-2.png" />
+    <Content Include="Images\SD-34-3.png" />
+    <Content Include="Images\SD-61-1.png" />
+    <Content Include="Images\SD-61-2.png" />
+    <Content Include="Images\SD-61-3.png" />
+    <Content Include="Images\SD-66-1.png" />
+    <Content Include="Images\SD-66-2.png" />
+    <Content Include="Images\SD-66-3.png" />
+    <Content Include="Images\SD-67-1.png" />
+    <Content Include="Images\SD-67-2.png" />
+    <Content Include="Images\SD-67-3.png" />
+    <Content Include="Images\SD-68-1.png" />
+    <Content Include="Images\SD-68-2.png" />
+    <Content Include="Images\SD-68-3.png" />
+    <Content Include="Images\SD-69-1.png" />
+    <Content Include="Images\SD-69-2.png" />
+    <Content Include="Images\SD-69-3.png" />
+    <Content Include="Images\SD-70-1.png" />
+    <Content Include="Images\SD-70-2.png" />
+    <Content Include="Images\SD-70-3.png" />
+    <Content Include="Icons\sd_fav_icon.ico" />
+    <Content Include="Images\LightiningImages\led-img.jpg" />
+    <Content Include="Images\Projectors\1000W-Asimetrik-Kutulu.jpg" />
+    <Content Include="Images\Projectors\1000W-Asimetrik.jpg" />
+    <Content Include="Images\Projectors\1000W-Simetrik.jpg" />
+    <Content Include="Images\Projectors\2000W-Projektor.jpg" />
+    <Content Include="Images\Projectors\250w-400w.jpg" />
+    <Content Include="Images\Projectors\BalansKutusuUzun.jpg" />
+    <Content Include="Images\SD-1-1.png" />
+    <Content Include="Images\SD-1-2.png" />
+    <Content Include="Images\SD-1-3.png" />
+    <Content Include="Images\SD-16-1.png" />
+    <Content Include="Images\SD-16-2.png" />
+    <Content Include="Images\SD-16-3.png" />
+    <Content Include="Images\sd-17-1.png" />
+    <Content Include="Images\SD-17-2.png" />
+    <Content Include="Images\SD-17-3.png" />
+    <Content Include="Images\sd-18-1.png" />
+    <Content Include="Images\SD-2-1.png" />
+    <Content Include="Images\SD-2-2.png" />
+    <Content Include="Images\SD-2-3.png" />
+    <Content Include="Images\sd-3-1.png" />
+    <Content Include="Images\sd-3-2.png" />
+    <Content Include="Images\sd-3-3.png" />
+    <Content Include="Images\SD-31-2.png" />
+    <Content Include="Images\SD-31-3.png" />
+    <Content Include="Images\SD-32-1.png" />
+    <Content Include="Images\SD-32-2.png" />
+    <Content Include="Images\SD-32-3.png" />
+    <Content Include="Images\SD-33-1.png" />
+    <Content Include="Images\SD-33-2.png" />
+    <Content Include="Images\SD-33-3.png" />
+    <Content Include="Images\SD-4-1.png" />
+    <Content Include="Images\SD-4-2.png" />
+    <Content Include="Images\SD-4-3.png" />
+    <Content Include="Images\SD-46-1.png" />
+    <Content Include="Images\SD-46-2.png" />
+    <Content Include="Images\SD-46-3.png" />
+    <Content Include="Images\SD-47-1.png" />
+    <Content Include="Images\SD-47-2.png" />
+    <Content Include="Images\SD-47-3.png" />
+    <Content Include="Images\sd-48-1.png" />
+    <Content Include="Images\SD-48-2.png" />
+    <Content Include="Images\SD-48-3.png" />
+    <Content Include="Images\sd-49-1.png" />
+    <Content Include="Images\SD-49-2.png" />
+    <Content Include="Images\SD-49-3.png" />
+    <Content Include="Images\SD-5-1.png" />
+    <Content Include="Images\SD-5-2.png" />
+    <Content Include="Images\SD-5-3.png" />
+    <Content Include="Images\SD-62-1.png" />
+    <Content Include="Images\SD-62-2.png" />
+    <Content Include="Images\SD-62-3.png" />
+    <Content Include="Images\SD-63-1.png" />
+    <Content Include="Images\SD-63-2.png" />
+    <Content Include="Images\SD-63-3.png" />
+    <Content Include="Images\SD-64-1.png" />
+    <Content Include="Images\SD-64-2.png" />
+    <Content Include="Images\SD-64-3.png" />
+    <Content Include="Images\SD-65-1.png" />
+    <Content Include="Images\SD-65-2.png" />
+    <Content Include="Images\SD-65-3.png" />
+    <Content Include="Images\SD-71-1.png" />
+    <Content Include="Images\SD-71-2.png" />
+    <Content Include="Images\SD-71-3.png" />
+    <Content Include="Images\SD-72-1.png" />
+    <Content Include="Images\SD-72-2.png" />
+    <Content Include="Images\SD-72-3.png" />
+    <Content Include="Images\SD-73-1.png" />
+    <Content Include="Images\SD-73-2.png" />
+    <Content Include="Images\SD-73-3.png" />
+    <Content Include="Images\SD-80-1.png" />
+    <Content Include="Images\SD-80-2.png" />
+    <Content Include="Images\SD-80-3.png" />
+    <Content Include="Images\SD-81-1.png" />
+    <Content Include="Images\SD-81-2.png" />
+    <Content Include="Images\SD-81-3.png" />
+    <Content Include="Images\Stadium Projectors\1000W-Asimetrik-Kutulu.jpg" />
+    <Content Include="Images\Stadium Projectors\1000W-Simetrik.jpg" />
+    <Content Include="Images\Stadium Projectors\2000W-Simetrik-Projektör.jpg" />
+    <Content Include="Images\Stadium Projectors\SP101-on.png" />
+    <Content Include="Images\Stadium Projectors\stad_armaturu.jpg" />
+    <Content Include="Images\superdeniz_logo.png" />
+    <Content Include="Images\superdeniz_logo_white.png" />
+    <Content Include="Images\süperdeniz-logo-old.png" />
+    <Content Include="Images\turk-mali_3.png" />
+    <Content Include="index.aspx" />
+    <Content Include="Lighting.aspx" />
+    <Content Include="ManagementPage.aspx" />
+    <Content Include="Modules\BannerModule.ascx" />
+    <Content Include="Modules\ProductDetailModule.ascx" />
+    <Content Include="Offer.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MasterPage.Master" />
+    <None Include="Properties\PublishProfiles\Superdeniz.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProductDetail.aspx" />
+    <Content Include="ProductGallery.aspx" />
+    <Content Include="Projektorler.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery.js" />
+    <Content Include="scripts\ProjectScripts.js" />
+    <Content Include="Style\bootstrap-social.css" />
+    <Content Include="Style\bootstrap-theme.min.css" />
+    <Content Include="Style\bootstrap.css" />
+    <Content Include="Style\bootstrap.min.css" />
+    <Content Include="Style\projectStyle.css" />
+    <Content Include="Style\shop-homepage.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoreLibrary\CoreLibrary.cs" />
+    <Compile Include="CoreLibrary\CorrectLibrary.cs" />
+    <Compile Include="CoreLibrary\DatabaseLibrary.cs" />
+    <Compile Include="CoreLibrary\LookUpsLibrary.cs" />
+    <Compile Include="CoreLibrary\MailLibrary.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\ImagesLibrary.cs" />
+    <Compile Include="Library\CompanyLibrary.cs" />
+    <Compile Include="Library\MyData.cs" />
+    <Compile Include="Library\UsingAreaLibrary.cs" />
+    <Compile Include="Library\UserLibrary.cs" />
+    <Compile Include="Library\VisitorLibrary.cs" />
+    <Compile Include="Library\ViewLibrary.cs" />
+    <Compile Include="Library\CategoryLibrary.cs" />
+    <Compile Include="Library\ProductLibrary.cs" />
+    <Compile Include="Lighting.aspx.cs">
+      <DependentUpon>Lighting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lighting.aspx.designer.cs">
+      <DependentUpon>Lighting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementPage.aspx.cs">
+      <DependentUpon>ManagementPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementPage.aspx.designer.cs">
+      <DependentUpon>ManagementPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BannerModule.ascx.cs">
+      <DependentUpon>BannerModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\BannerModule.ascx.designer.cs">
+      <DependentUpon>BannerModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductDetailModule.ascx.cs">
+      <DependentUpon>ProductDetailModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductDetailModule.ascx.designer.cs">
+      <DependentUpon>ProductDetailModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Offer.aspx.cs">
+      <DependentUpon>Offer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Offer.aspx.designer.cs">
+      <DependentUpon>Offer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.designer.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projektorler.aspx.cs">
+      <DependentUpon>Projektorler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projektorler.aspx.designer.cs">
+      <DependentUpon>Projektorler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProjectLibrary\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50216</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1717/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
