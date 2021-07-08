@@ -113,9 +113,9 @@ footer {
     padding: 25px;
     margin: 0;
     color: #FFF;
-    background: -moz-linear-gradient(bottom, #d9534f 0%, #a94442 100%);
+    /*background: -moz-linear-gradient(bottom, #d9534f 0%, #a94442 100%);
     background: -webkit-linear-gradient(bottom, #d9534f 0%, #a94442 100%);
-    background: linear-gradient(to bottom, #d9534f 0%, #a94442 100%);
+    background: linear-gradient(to bottom, #d9534f 0%, #a94442 100%);*/
 }
 
 .fadePanel {

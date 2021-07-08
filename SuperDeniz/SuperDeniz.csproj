@@ -101,12 +101,16 @@
     <Content Include="Icons\resist_electricity.png" />
     <Content Include="Icons\resist_hight_warm.png" />
     <Content Include="Icons\resist_water.png" />
+    <Content Include="Images\LightiningImages\slider-1.png" />
     <Content Include="Images\SD-18-2.png" />
     <Content Include="Images\SD-18-3.png" />
     <Content Include="Images\SD-31-1.png" />
     <Content Include="Images\SD-34-1.png" />
     <Content Include="Images\SD-34-2.png" />
     <Content Include="Images\SD-34-3.png" />
+    <Content Include="Images\SD-35-1.png" />
+    <Content Include="Images\SD-35-2.png" />
+    <Content Include="Images\SD-35-3.png" />
     <Content Include="Images\SD-61-1.png" />
     <Content Include="Images\SD-61-2.png" />
     <Content Include="Images\SD-61-3.png" />
@@ -222,6 +226,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPage.Master" />
+    <Content Include="Images\SD-35-1.psd" />
+    <Content Include="Images\SD-35-2.psd" />
+    <Content Include="Images\SD-35-3.psd" />
     <None Include="Properties\PublishProfiles\Superdeniz.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -236,12 +243,16 @@
     <Content Include="Projektorler.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.bundle.js" />
+    <Content Include="scripts\bootstrap.bundle.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\ProjectScripts.js" />
-    <Content Include="Style\bootstrap-social.css" />
-    <Content Include="Style\bootstrap-theme.min.css" />
+    <Content Include="Style\bootstrap-grid.css" />
+    <Content Include="Style\bootstrap-grid.min.css" />
+    <Content Include="Style\bootstrap-reboot.css" />
+    <Content Include="Style\bootstrap-reboot.min.css" />
     <Content Include="Style\bootstrap.css" />
     <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\projectStyle.css" />

@@ -51,15 +51,6 @@ namespace SuperDeniz
         protected global::System.Web.UI.WebControls.Repeater rpCategory;
 
         /// <summary>
-        /// BannerModule control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SuperDeniz.Modules.BannerModule BannerModule;
-
-        /// <summary>
         /// mixedProducts control.
         /// </summary>
         /// <remarks>

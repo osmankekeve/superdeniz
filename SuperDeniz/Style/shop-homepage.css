@@ -57,3 +57,19 @@ footer {
 .border-none {
     border:hidden !important
 }
+
+.card .card-body .product-name {
+    font-size: 14px
+}
+
+.bg-thirdy {
+    background-color: rgb(244, 244, 244) !important;
+}
+
+.bg-fourdy {
+    background-color: #f1f1f1 !important;
+}
+
+.font-weight-600 {
+    font-weight:600 !important
+}

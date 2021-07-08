@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SuperDeniz {
-    
-    
-    public partial class Projektorler {
-        
+namespace SuperDeniz
+{
+
+
+    public partial class Projektorler
+    {
+
         /// <summary>
         /// pnlErrorInformation control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace SuperDeniz {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlErrorInformation;
-        
+
         /// <summary>
         /// lblErrorInformation control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace SuperDeniz {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorInformation;
-        
+
         /// <summary>
         /// pnlSuccessInformation control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace SuperDeniz {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSuccessInformation;
-        
+
         /// <summary>
         /// lblSuccessInformation control.
         /// </summary>
@@ -47,7 +49,16 @@ namespace SuperDeniz {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSuccessInformation;
-        
+
+        /// <summary>
+        /// BannerModule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SuperDeniz.Modules.BannerModule BannerModule;
+
         /// <summary>
         /// lblCategoryName control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace SuperDeniz {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCategoryName;
-        
+
         /// <summary>
         /// rptUrunler control.
         /// </summary>

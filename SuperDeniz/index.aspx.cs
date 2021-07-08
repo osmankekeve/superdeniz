@@ -31,6 +31,7 @@ namespace SuperDeniz
                 populateProductDetail();
                 clearInformationPanels();
                 string IP = coreLib.GetVisitorIPAddress();
+                pnlInfo.Visible = coreLib.getConfigKey("isShowInfoPanel") == "true";
             }
             catch (Exception _ex)
             {
@@ -45,9 +46,6 @@ namespace SuperDeniz
             DataTable dt = catLib.getIndexPageProducts();
             rptUrunler.DataSource = dt;
             rptUrunler.DataBind();
-
-            Repeater1.DataSource = dt;
-            Repeater1.DataBind();
         }
 
         protected void rptUrunler_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -87,8 +85,8 @@ namespace SuperDeniz
             {
                 if (!MyData.isSessionActive)
                 {
-                    Button btnAddBasket = e.Item.FindControl("btnAddBasket") as Button;
-                    btnAddBasket.Visible = false;
+                    //Button btnAddBasket = e.Item.FindControl("btnAddBasket") as Button;
+                    //btnAddBasket.Visible = false;
                 }
             }
             catch (Exception _ex)

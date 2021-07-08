@@ -51,13 +51,22 @@ namespace SuperDeniz
         protected global::System.Web.UI.WebControls.Label lblSuccessInformation;
 
         /// <summary>
-        /// Repeater1 control.
+        /// BannerModule control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::SuperDeniz.Modules.BannerModule BannerModule;
+
+        /// <summary>
+        /// pnlInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlInfo;
 
         /// <summary>
         /// rptUrunler control.

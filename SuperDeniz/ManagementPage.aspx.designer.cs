@@ -294,6 +294,15 @@ namespace SuperDeniz
         protected global::System.Web.UI.WebControls.Panel pnlSearch;
 
         /// <summary>
+        /// BannerModule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SuperDeniz.Modules.BannerModule BannerModule;
+
+        /// <summary>
         /// rptUrunler control.
         /// </summary>
         /// <remarks>

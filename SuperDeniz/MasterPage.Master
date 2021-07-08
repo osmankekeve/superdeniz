@@ -1,6 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SuperDeniz.MasterPage" %>
-<%@ Register Src="~/Modules/BannerModule.ascx" TagPrefix="uc1" TagName="BannerModule" %>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +16,74 @@
     <link href="style/shop-homepage.css" rel="stylesheet">
     <link href="style/projectStyle.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="Icons/sd_fav_icon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        #return-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.7);
+            width: 50px;
+            height: 50px;
+            display: block;
+            text-decoration: none;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            display: none;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+            #return-to-top i {
+                color: #fff;
+                margin: 0;
+                position: relative;
+                left: 19px;
+                top: 13px;
+                font-size: 19px;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+            }
+
+            #return-to-top:hover {
+                background: rgba(0, 0, 0, 0.9);
+                cursor:pointer;
+            }
+
+                #return-to-top:hover i {
+                    color: #fff;
+                    top: 5px;
+                }
+    </style>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("return-to-top").style.display = "block";
+            } else {
+                document.getElementById("return-to-top").style.display = "none";
+            }
+        }
+        function btnToTopScreen() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+        };
+
+    </script>
     <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder2"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.aspx">
                     <img src="Images/superdeniz_logo.png" width="180" height="60" style="padding: 5px" />
@@ -44,7 +105,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color: rgb(244, 244, 244);">
+        <nav class="navbar navbar-expand-lg navbar-light bg-thirdy mt-3">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,20 +113,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                     <ul id="nav2" class="navbar-nav mr-auto">
                         <asp:Repeater ID="rpCategory" runat="server">
-                                <ItemTemplate>
-                                    <li class="nav-item">
-                                        <a class="nav-link float-left px-3" href='<%#Eval("categoryID", "Projektorler.aspx?uid={0}") %>'><%#Eval("categoryName") %></a>
-                                        <div style="border-right: 1px solid #ddd;min-height: 26px; margin-top:10px"></div>
-                                    </li>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                            <ItemTemplate>
+                                <li class="nav-item">
+                                    <a class="nav-link float-left px-3" href='<%#Eval("categoryID", "Projektorler.aspx?uid={0}") %>'><%#Eval("categoryName") %></a>
+                                    <div style="border-right: 1px solid #ddd; min-height: 26px; margin-top: 10px"></div>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container mt-2">
-            <uc1:BannerModule runat="server" id="BannerModule" />
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3" hidden>
@@ -74,7 +132,6 @@
                             <h3 class="panel-title">Kategoriler</h3>
                         </div>
                         <div id="categoryList" class="list-group">
-                            
                         </div>
                     </div>
                     <div runat="server" id="mixedProducts" class="panel panel-red" visible="false">
@@ -86,7 +143,7 @@
                                 <ItemTemplate>
                                     <div class="row" style="border-bottom: solid thin #d9534f; padding-top: 5px; padding-bottom: 5px; margin-left: 0px !important; margin-right: 0px !important">
                                         <div class="col-sm-6">
-                                            <img src='<%#Eval("imageUrl") %>' width="100" height="63" title='<%#Eval("productName") %>'>
+                                            <img src='<%#Eval("imageUrl") %>' width="100" height="63" title="Detay Görüntüle">
                                         </div>
                                         <div class="col-sm-6">
                                             <a href='<%#Eval("productID", "ProductDetail.aspx?pid={0}") %>'>
@@ -119,22 +176,21 @@
             </div>
 
         </div>
-        <footer class="container-fluid text-center">
+        <footer class="container-fluid bg-fourdy text-center">
             <a href="index.aspx">
-                <img src="Images/superdeniz_logo_white.png" width="200" height="68" style="padding: 5px" />
+                <img src="Images/superdeniz_logo.png" width="200" height="68" style="padding: 5px" />
             </a>
             <img src="Images/turk-mali_3.png" alt="%100 Türk Malı" width="68" height="68" style="padding: 5px" />
-            <p>Süperdeniz Aydınlatma © Copyright 2017</p>
-            <div class="form-inline">
-                Site İçi Arama:
-                <div style="margin: 8px" class="input-group">
-                    <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control" placeholder="Site İçinde Ara.."></asp:TextBox>
-                    <div class="input-group-btn">
-                        <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-danger" Text="Ara" OnClick="btnSearch_Click" />
-                    </div>
+            <p class="text-black-50">Süperdeniz Aydınlatma © Copyright 2017</p>
+            <div class="d-flex justify-content-center">
+                <div class="form-inline my-2 my-lg-0">
+                    <span class="text-black-50 mr-2">Site İçi Arama:</span>
+                    <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control mr-sm-2" placeholder="Site İçinde Ara.."></asp:TextBox>
+                    <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-outline-success my-2 my-sm-0" Text="Ara" OnClick="btnSearch_Click" />
                 </div>
             </div>
         </footer>
+        <a id="return-to-top" onClick="btnToTopScreen()"><i class="fas fa-angle-double-up text-white"></i></a>
         <script type="text/javascript" src="scripts/jquery.js"></script>
         <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
         <script type="text/javascript" src="scripts/ProjectScripts.js"></script>

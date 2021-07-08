@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="SuperDeniz.index" %>
+<%@ Register Src="~/Modules/BannerModule.ascx" TagPrefix="uc1" TagName="BannerModule" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <style>
@@ -28,81 +29,33 @@
             <asp:Label runat="server" ID="lblSuccessInformation"></asp:Label>
         </div>
     </asp:Panel>
-    <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="rptUrunler_ItemCommand" OnItemDataBound="rptUrunler_ItemDataBound">
-        <ItemTemplate>
-            <div class="col-sm-4">
-                <div class="card h-100">
-                    <img class="img-thumbnail card-img-top border-none" src='<%#Eval("imageUrl") %>' width="800" height="500" title='<%#Eval("productName") %>'>
-                    <div class="card-body">
-                        <h4 class="card-title"><%#Eval("productCode") %></h4>
-                        <p class="card-text"><%#Eval("productName") %></p>
-                        <div class="thumbnail">
-                            <div class="ratings">
-                                <div class="form-group-sm">
-                                    <a href='<%#Eval("productID", "ProductDetail.aspx?pid={0}") %>' class="btn btn-warning">Detayı Göster</a>
-                                    <asp:Button runat="server" ID="Button1" CssClass="btn btn-info pull-right" CommandName="btnAddBasket" CommandArgument='<%#Eval("productID") %>' Text="Sepete Ekle" />
-                                </div>
-                            </div>
+    <div class="mt-2">
+        <uc1:BannerModule runat="server" ID="BannerModule" />
+    </div>
+    <div class="card mt-1" runat="server" id="pnlInfo">
+        <div class="card-body bg-success text-white">
+            <img src="Images/info.png" width="50" />
+            YENİLENDİK!!! Sizlere daha iyi hizmet verebilmek için sitemizi yeniliyoruz.!!
+        </div>
+    </div>
+    <div class="row mb-2">
+        <asp:Repeater ID="rptUrunler" runat="server">
+            <ItemTemplate>
+                <div class="col-sm-3 mt-2">
+                    <div class="card h-100" style="border: 1px solid rgba(0,0,0,.2) !important">
+                        <div class="card-body">
+                            <a href='<%#Eval("productID", "ProductDetail.aspx?pid={0}") %>'>
+                                <img class="img-thumbnail border-none mb-3" src='<%#Eval("imageUrl") %>' width="800" height="500" title="Detay Görüntüle">
+                            </a>
+                            <h5 class="card-title"><%#Eval("productCode") %></h5>
+                            <p class="card-text product-name"><%#Eval("productName") %></p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text text-danger"><%#Eval("view") %> Görüntülenme</p>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <%#Eval("productCode") %>
-                    </div>
-                    <div class="panel-body">
-                        <div class="thumbnail">
-                            <img src='<%#Eval("imageUrl") %>' width="800" height="500" title='<%#Eval("productName") %>'>
-                            <div class="caption">
-                                <p><%#Eval("productName") %></p>
-                            </div>
-                            <div class="ratings">
-                                <div class="form-group-sm">
-                                    <a href='<%#Eval("productID", "ProductDetail.aspx?pid={0}") %>' class="btn btn-warning">Detayı Göster</a>
-                                    <asp:Button runat="server" ID="btnAddBasket" CssClass="btn btn-info pull-right" CommandName="btnAddBasket" CommandArgument='<%#Eval("productID") %>' Text="Sepete Ekle" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <%#Eval("view") %> Görüntülenme
-                    </div>
-                </div>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
-
-    <asp:Repeater ID="rptUrunler" runat="server" OnItemCommand="rptUrunler_ItemCommand" OnItemDataBound="rptUrunler_ItemDataBound">
-        <ItemTemplate>
-            <div class="col-sm-4">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <%#Eval("productCode") %>
-                    </div>
-                    <div class="panel-body">
-                        <div class="thumbnail">
-                            <img src='<%#Eval("imageUrl") %>' width="800" height="500" title='<%#Eval("productName") %>'>
-                            <div class="caption">
-                                <p><%#Eval("productName") %></p>
-                            </div>
-                            <div class="ratings">
-                                <div class="form-group-sm">
-                                    <a href='<%#Eval("productID", "ProductDetail.aspx?pid={0}") %>' class="btn btn-warning">Detayı Göster</a>
-                                    <asp:Button runat="server" ID="btnAddBasket" CssClass="btn btn-info pull-right" CommandName="btnAddBasket" CommandArgument='<%#Eval("productID") %>' Text="Sepete Ekle" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <%#Eval("view") %> Görüntülenme
-                    </div>
-                </div>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>
