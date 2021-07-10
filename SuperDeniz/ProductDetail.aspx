@@ -24,6 +24,13 @@
         video::-webkit-media-controls-mute-button {
             display: none !important;
         }
+        .downloadPdf {
+            color: #b43337 !important;
+        }
+        .downloadPdf:hover {
+            color: #b43337 !important;
+            opacity:0.8 !important
+        }
     </style>
 </asp:Content>
 
@@ -83,6 +90,9 @@
             <div class="card h-100">
                 <div class="card-header">
                     Ürün Bilgileri
+                    <a runat="server" id="imgDownloadPdf" target="_blank" class="float-right downloadPdf">
+                        <asp:Image runat="server" ImageUrl="Icons/pdf-icon.ico" Width="25px"/> Döküman İndir
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="row marginBottomForDetailRow">

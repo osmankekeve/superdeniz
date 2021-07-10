@@ -229,6 +229,20 @@
     <Content Include="Images\SD-35-1.psd" />
     <Content Include="Images\SD-35-2.psd" />
     <Content Include="Images\SD-35-3.psd" />
+    <Content Include="Documents\sd-1.pdf" />
+    <Content Include="Documents\sd-16.pdf" />
+    <Content Include="Documents\sd-17.pdf" />
+    <Content Include="Documents\sd-18.pdf" />
+    <Content Include="Documents\sd-2.pdf" />
+    <Content Include="Documents\sd-3.pdf" />
+    <Content Include="Documents\sd-31.pdf" />
+    <Content Include="Documents\sd-32.pdf" />
+    <Content Include="Documents\sd-33.pdf" />
+    <Content Include="Documents\sd-34.pdf" />
+    <Content Include="Documents\sd-35.pdf" />
+    <Content Include="Documents\sd-4.pdf" />
+    <Content Include="Documents\sd-5.pdf" />
+    <Content Include="Documents\urun-bilgilendirme-formu.xlsx" />
     <None Include="Properties\PublishProfiles\Superdeniz.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

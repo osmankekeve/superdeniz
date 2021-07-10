@@ -46,6 +46,7 @@ namespace SuperDeniz
             populateProductDetail();
             populateDescriptions();
             populateProductImages();
+
         }
 
         protected void populateProductDetail()
@@ -75,6 +76,7 @@ namespace SuperDeniz
             lblWeightValue.Text = proLib.weight;
             lblSizeValue.Text = proLib.size;
             lblDeepValue.Text = proLib.deep;
+            imgDownloadPdf.HRef = proLib.pdfPath;
             if (proLib.videoPath == "")
             {
                 pnlVideo.Visible = false;
@@ -84,6 +86,7 @@ namespace SuperDeniz
                 pnlVideo.Visible = true;
                 myVideo.Src = proLib.videoPath;
             }
+            imgDownloadPdf.Visible = proLib.pdfPath != "";
         }
 
         protected void clearInformationPanels()
@@ -178,6 +181,33 @@ namespace SuperDeniz
                 pnlErrorInformation.Visible = true;
                 lblErrorInformation.Text = _ex.ToString();
             }
+        }
+
+        protected void ibtnDownloadPDF_Click(object sender, ImageClickEventArgs e)
+        {
+            //using (WebClient client = new WebClient())
+            //{
+            //    client.DownloadFile(new Uri(url), @"c:\temp\image35.png");
+            //    // OR 
+            //    client.DownloadFileAsync(new Uri(url), @"c:\temp\image35.png");
+            //}
+            ProductLibrary pLib = new ProductLibrary();
+            pLib.get(ViewState["productID"].ToString());
+
+
+            string url = "http://localhost:1717/Documents/sd-1.pdf";
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead(url);
+            Bitmap bitmap = new Bitmap(stream);
+
+            if (bitmap != null)
+            {
+                bitmap.Save("Image1.png", ImageFormat.Png);
+            }
+
+            stream.Flush();
+            stream.Close();
+            client.Dispose();
         }
     }
 }

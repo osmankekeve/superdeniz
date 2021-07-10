@@ -27,6 +27,7 @@ public class ProductLibrary
     public string Code;
     public string view;
     public string videoPath;
+    public string pdfPath;
 
     public ProductLibrary()
     {
@@ -61,6 +62,7 @@ public class ProductLibrary
         Code = "";
         view = "";
         videoPath = "";
+        pdfPath = "";
     }
 
     public string save()
@@ -78,11 +80,11 @@ public class ProductLibrary
 
     protected void select()
     {
-        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR, p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view', p.videoPath
+        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR, p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view', p.videoPath, p.pdfPath
 FROM " + dbl.tblProduct + @" p
 LEFT JOIN " + dbl.tblView + @" v ON v.code = p.Code
 WHERE p.productID = @productID
-GROUP BY p.productID, p.productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR, p.imageUrl), p.Code, p.videoPath";
+GROUP BY p.productID, p.productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR, p.imageUrl), p.Code, p.videoPath, p.pdfPath";
         dbl.addParameter("@productID", productID);
         DataTable dt = dbl.executeCommand(sqlCommandQuery, false);
         if (dt.Rows.Count==1)
@@ -104,6 +106,7 @@ GROUP BY p.productID, p.productCode, p.productName, p.body, p.reflector, p.socke
             Code = dr["Code"].ToString();
             view = dr["view"].ToString();
             videoPath = cl.getString(dr["videoPath"].ToString());
+            pdfPath = cl.getString(dr["pdfPath"].ToString());
         }
     }
 
