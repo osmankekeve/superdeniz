@@ -130,7 +130,7 @@ GROUP BY p.productID, p.productCode, p.productName, p.body, p.reflector, p.socke
 
     public DataTable getProductsByCategoryID(string _categoryCode)
     {
-        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view' 
+        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view', pm.sort 
 FROM " + dbl.tblProductMapping + @" pm
 LEFT JOIN " + dbl.tblProduct + @" p ON p.Code = pm.code
 LEFT JOIN " + dbl.tblView + @" v ON v.code=p.Code ";
@@ -139,34 +139,40 @@ LEFT JOIN " + dbl.tblView + @" v ON v.code=p.Code ";
             sqlCommandQuery += " WHERE pm.categoryCode=@categoryCode ";
             dbl.addParameter("@categoryCode", _categoryCode);
         }
-        sqlCommandQuery += " GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code ";
+        sqlCommandQuery += @" 
+GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code, pm.sort 
+ORDER BY pm.sort ASC";
         return dbl.executeCommand(sqlCommandQuery, false);
     }
 
     public DataTable getSearchedProduct(string _searchText)
     {
-        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view' 
+        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view', pm.sort
 FROM " + dbl.tblProductMapping + @" pm
 LEFT JOIN " + dbl.tblProduct + @" p ON p.Code = pm.code
 LEFT JOIN " + dbl.tblView + @" v ON v.code=p.Code WHERE p.productName LIKE '%"+_searchText+@"%'";
-        sqlCommandQuery += " GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code ";
+        sqlCommandQuery += @" 
+GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code, pm.sort  
+ORDER BY pm.sort ASC";
         return dbl.executeCommand(sqlCommandQuery, false);
     }
 
     public DataTable getIndexPageProducts()
     {
-        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view' 
+        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code, COUNT(v.code) AS 'view', p.sort
 FROM " + dbl.tblProduct + @" p  
 LEFT JOIN " + dbl.tblView + @" v ON v.code=p.Code
 WHERE productID IN (" + lul.getValueOfSetting("indexPageProducts") + @") 
-GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code ";
+GROUP BY p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl), p.Code, p.sort 
+ORDER BY p.sort ASC";
         return dbl.executeCommand(sqlCommandQuery, false);
     }
 
     public DataTable getAllProducts()
     {
-        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code 
-FROM " + dbl.tblProduct + @" p   ";
+        string sqlCommandQuery = @"SELECT p.productID, p. productCode, p.productName, p.body, p.reflector, p.socket, p.paint, p.gasket, p.glass, p.weight, p.size, p.deep, CONVERT(NVARCHAR,p.imageUrl) AS 'imageUrl', p.Code , p.sort
+FROM " + dbl.tblProduct + @" p 
+ORDER BY p.sort ASC";
         return dbl.executeCommand(sqlCommandQuery, false);
     }
 

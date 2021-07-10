@@ -12,9 +12,9 @@
     <meta name="keywords" content="Aydınlatma, Projektör, Armatür, Su Altı, Sualtı, Uzun Menzilli, Stad Aydınlatma, Stad Projektörü, Park, Park Aydınlatm, Bahçe Aydınlatma, Led, Led Aydınlatma, Balans, Balans Kutusu, Aleminyum, Aleminyum Döküm, Yanmaz Silikon Conta">
     <meta name="robots" content="index, follow">
 
-    <link href="style/bootstrap.min.css" rel="stylesheet">
-    <link href="style/shop-homepage.css" rel="stylesheet">
-    <link href="style/projectStyle.css" rel="stylesheet">
+    <link href="style/bootstrap.min.css?sv=2" rel="stylesheet">
+    <link href="style/shop-homepage.css?sv=2" rel="stylesheet">
+    <link href="style/projectStyle.css?sv=2" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="Icons/sd_fav_icon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <style>

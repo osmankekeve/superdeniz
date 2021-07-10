@@ -98,6 +98,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Icons\img_avatar1.png" />
     <Content Include="Icons\impect_resist.png" />
+    <Content Include="Icons\pdf-icon.ico" />
     <Content Include="Icons\resist_electricity.png" />
     <Content Include="Icons\resist_hight_warm.png" />
     <Content Include="Icons\resist_water.png" />
