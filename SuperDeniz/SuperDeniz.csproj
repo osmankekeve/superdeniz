@@ -102,6 +102,7 @@
     <Content Include="Icons\resist_electricity.png" />
     <Content Include="Icons\resist_hight_warm.png" />
     <Content Include="Icons\resist_water.png" />
+    <Content Include="Images\info.png" />
     <Content Include="Images\LightiningImages\slider-1.png" />
     <Content Include="Images\SD-18-2.png" />
     <Content Include="Images\SD-18-3.png" />
@@ -112,6 +113,12 @@
     <Content Include="Images\SD-35-1.png" />
     <Content Include="Images\SD-35-2.png" />
     <Content Include="Images\SD-35-3.png" />
+    <Content Include="Images\SD-36-1.png" />
+    <Content Include="Images\SD-36-2.png" />
+    <Content Include="Images\SD-36-3.png" />
+    <Content Include="Images\SD-37-1.png" />
+    <Content Include="Images\SD-37-2.png" />
+    <Content Include="Images\SD-37-3.png" />
     <Content Include="Images\SD-61-1.png" />
     <Content Include="Images\SD-61-2.png" />
     <Content Include="Images\SD-61-3.png" />

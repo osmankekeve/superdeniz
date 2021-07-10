@@ -206,20 +206,7 @@
                     Özellikler ve Kullanım Alanları
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <img src="Icons/impect_resist.png" width="75" height="75" />
-                        </div>
-                        <div class="col">
-                            <img src="Icons/resist_hight_warm.png" width="75" height="75" />
-                        </div>
-                        <div class="col">
-                            <img src="Icons/resist_electricity.png" width="75" height="75" />
-                        </div>
-                        <div class="col">
-                            <img src="Icons/resist_water.png" width="75" height="75" />
-                        </div>
-                    </div>
+                    <img class="d-block w-100" src="../Icons/secure-image.png" alt="First slide">
                 </div>
                 <div class="card-body">
                     <asp:DataList ID="dlDescriptions" runat="server">
