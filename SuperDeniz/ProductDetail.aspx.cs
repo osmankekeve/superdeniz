@@ -85,6 +85,14 @@ namespace SuperDeniz
             {
                 pnlVideo.Visible = true;
                 myVideo.Src = proLib.videoPath;
+                if (proLib.videoPath2 == "")
+                {
+                    myVideo2.Visible = false;
+                }
+                else
+                {
+                    myVideo2.Src = proLib.videoPath2;
+                }
             }
             imgDownloadPdf.Visible = proLib.pdfPath != "";
         }

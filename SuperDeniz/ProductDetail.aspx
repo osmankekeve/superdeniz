@@ -24,13 +24,15 @@
         video::-webkit-media-controls-mute-button {
             display: none !important;
         }
+
         .downloadPdf {
             color: #b43337 !important;
         }
-        .downloadPdf:hover {
-            color: #b43337 !important;
-            opacity:0.8 !important
-        }
+
+            .downloadPdf:hover {
+                color: #b43337 !important;
+                opacity: 0.8 !important
+            }
     </style>
 </asp:Content>
 
@@ -58,31 +60,31 @@
                 </div>
                 <div class="card-body">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img runat="server" class="d-block w-100" id="img1" alt="First slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img runat="server" class="d-block w-100" id="img1" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img runat="server" class="d-block w-100" id="img2" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img runat="server" class="d-block w-100" id="img3" alt="Second slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <img runat="server" class="d-block w-100" id="img2" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img runat="server" class="d-block w-100" id="img3" alt="Second slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
                 </div>
             </div>
         </div>
@@ -91,7 +93,8 @@
                 <div class="card-header">
                     Ürün Bilgileri
                     <a runat="server" id="imgDownloadPdf" target="_blank" class="float-right downloadPdf">
-                        <asp:Image runat="server" ImageUrl="Icons/pdf-icon.ico" Width="25px"/> Döküman İndir
+                        <asp:Image runat="server" ImageUrl="Icons/pdf-icon.ico" Width="25px" />
+                        Döküman İndir
                     </a>
                 </div>
                 <div class="card-body">
@@ -194,9 +197,18 @@
                     Ürün Video
                 </div>
                 <div class="card-body">
-                    <video runat="server" id="myVideo" autoplay muted loop title="Uzun Mentilli Tarama Projektörü"
-                        style="margin-bottom: 10px; width: 100%; max-width: 350px; height: auto; max-height: 370px;">
-                    </video>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <video runat="server" id="myVideo" autoplay muted loop title="Uzun Menzilli Tarama Projektörü"
+                                style="margin-bottom: 10px; width: 100%; height: auto; max-height: 370px;">
+                            </video>
+                        </div>
+                        <div class="col-sm-12">
+                            <video runat="server" id="myVideo2" autoplay muted loop title="Uzun Menzilli Tarama Projektörü"
+                                style="margin-bottom: 10px; width: 100%; height: auto; max-height: 370px;">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

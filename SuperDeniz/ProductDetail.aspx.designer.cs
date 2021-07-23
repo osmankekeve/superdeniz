@@ -303,6 +303,15 @@ namespace SuperDeniz
         protected global::System.Web.UI.HtmlControls.HtmlVideo myVideo;
 
         /// <summary>
+        /// myVideo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlVideo myVideo2;
+
+        /// <summary>
         /// dlDescriptions control.
         /// </summary>
         /// <remarks>
